@@ -1,0 +1,14 @@
+{
+  "name": "three-ai",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Guillermo Puente <guillermo.ps09@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

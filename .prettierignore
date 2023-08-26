@@ -1,0 +1,14 @@
+# turbo
+.turbo
+
+# builds & dist
+build
+dist
+dist-electron
+release
+
+# cache
+.cache
+
+node_modules
+stories
