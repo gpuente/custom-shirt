@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "composite": false,
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "inlineSources": false,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "preserveWatchOutput": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "rootDir": "./src",
+    "module": "commonjs",
+    "target": "es5",
+    "outDir": "./build",
+    "resolveJsonModule": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@logger": ["logger"],
+      "@routes": ["routes"],
+      "@routes/*": ["routes/*"],
+      "@middlewares": ["middlewares"],
+      "@middlewares/*": ["middlewares/*"],
+      "@errors": ["errors"],
+      "@errors/*": ["errors/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
