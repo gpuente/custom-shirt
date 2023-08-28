@@ -1,9 +1,11 @@
+import 'dotenv/config';
+
 import { app } from './app';
 
 const startServer = async () => {
-  // if (!process.env.API_KEY) {
-  //   throw new Error('API_KEY must be defined');
-  // }
+  if (!process.env.OPENAI_API_KEY) {
+    throw new Error('OPENAI_API_KEY must be defined');
+  }
 
   const port = process.env.PORT || 3000;
 

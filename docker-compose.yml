@@ -6,4 +6,6 @@ services:
       context: ./apps/server
       dockerfile: Dockerfile
     ports:
-      - 3000:3000
+      - ${PORT}:${PORT}
+    env_file:
+      - ./apps/server/.env

@@ -2,3 +2,5 @@
 .eslintrc.js
 .prettierrc
 .env.local
+.env
+example.env
