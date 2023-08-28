@@ -25,8 +25,8 @@ export const CameraRig: React.FC<CameraRigProps> = ({ children }) => {
       if (isBreakpoint) targetPosition = new Vector3(0, 0, 2);
       if (isMobile) targetPosition = new Vector3(0, 0.1, 2.5);
     } else {
-      if (isBreakpoint) targetPosition = new Vector3(0, 0, 2.5);
       if (isMobile) targetPosition = new Vector3(0, 0, 2.5);
+      else targetPosition = new Vector3(0, 0, 2.5);
     }
 
     // set model camera position
