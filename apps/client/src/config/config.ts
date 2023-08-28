@@ -3,7 +3,7 @@ const config = {
     backendUrl: 'http://localhost:3000/api/v1/generate-image',
   },
   production: {
-    backendUrl: 'https://devswag.onrender.com/api/v1/generate-image',
+    backendUrl: 'https://custom-shirt-o4a3.onrender.com/api/v1/generate-image',
   },
 };
 
