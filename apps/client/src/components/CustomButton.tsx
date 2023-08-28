@@ -28,7 +28,7 @@ const generateStyle = (color: string, type?: ButtonType) => {
 export interface CustomButtonProps {
   type?: ButtonType;
   title: string;
-  handleClick: () => void;
+  handleClick?: () => void;
   customStyles?: string;
 }
 

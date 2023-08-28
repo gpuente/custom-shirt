@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import state from '../store';
 import config from '../config/config';
-import { downloadIcon } from '../assets';
-import { fadeAnimation, slideAnimation } from '../config/motion';
-import { downloadCanvasToImage, reader } from '../config/helpers';
+import { reader } from '../config/helpers';
+import { slideAnimation } from '../config/motion';
 import {
-  AIPicker,
-  ColorPicker,
-  FilePicker,
   Tab,
+  AIPicker,
+  FilePicker,
+  ColorPicker,
   CustomButton,
 } from '../components';
 import {
@@ -99,6 +98,21 @@ export const Customizer = () => {
 
     try {
       // call backend api
+      const configEnv = import.meta.env.DEV ? 'development' : 'production';
+
+      setGeneratingImg(true);
+
+      const response = await fetch(config[configEnv].backendUrl, {
+        method: 'POST',
+        body: JSON.stringify({ prompt }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const data = await response.json();
+
+      handleDecals(type, `data:image/png;base64,${data.image}`);
     } catch (error) {
       alert(error);
     } finally {
