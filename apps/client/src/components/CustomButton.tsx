@@ -1,20 +1,25 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import state from '../store';
+import { getContrastingColor } from '../config/helpers';
 
 export type ButtonType = 'filled' | 'outlined';
 
-const generateStyle = (bg: string, type?: ButtonType) => {
+const generateStyle = (color: string, type?: ButtonType) => {
   const defaultStyle = {
-    backgroundColor: bg,
-    color: '#fff',
+    backgroundColor: color,
+    color: getContrastingColor(color),
   };
 
   switch (type) {
     case 'filled':
       return defaultStyle;
     case 'outlined':
-      return {};
+      return {
+        borderWidth: '1px',
+        borderColor: color,
+        color: getContrastingColor(color),
+      };
     default:
       return defaultStyle;
   }

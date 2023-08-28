@@ -42,3 +42,5 @@ export const DecalTypes = {
     filterTab: 'stylishShirt',
   },
 };
+
+export type DecalTypeKey = keyof typeof DecalTypes;
