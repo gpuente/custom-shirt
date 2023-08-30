@@ -1,5 +1,8 @@
 import { useSnapshot } from 'valtio';
 import { motion, AnimatePresence } from 'framer-motion';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import state from '../store';
 import { CustomButton } from '../components';
@@ -18,11 +21,34 @@ export const Home = () => {
       {snap.intro && (
         <motion.section className="home" {...slideAnimation('left')}>
           <motion.header {...slideAnimation('down')}>
-            <img
-              src="./threejs.png"
-              alt="logo"
-              className="w-8 h-8 object-contain"
-            />
+            <div className="flex flex-row gap-4">
+              <img
+                src="./threejs.png"
+                alt="logo"
+                className="w-8 h-8 object-contain"
+              />
+              <a
+                href="https://www.linkedin.com/in/guillermo-puente-66125b54/"
+                target="_blank"
+              >
+                <FontAwesomeIcon
+                  icon={faLinkedin}
+                  className="w-8 h-8 transform transition duration-300 hover:scale-125"
+                />
+              </a>
+              <a href="https://github.com/gpuente/custom-shirt" target="_blank">
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  className="w-8 h-8 transform transition duration-300 hover:scale-125"
+                />
+              </a>
+              <a href="https://gpuente.me" target="_blank">
+                <FontAwesomeIcon
+                  icon={faLink}
+                  className="w-8 h-8 transform transition duration-300 hover:scale-125"
+                />
+              </a>
+            </div>
           </motion.header>
           <motion.div className="home-content" {...headContainerAnimation}>
             <motion.div {...headTextAnimation}>
